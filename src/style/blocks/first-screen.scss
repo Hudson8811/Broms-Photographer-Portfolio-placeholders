@@ -1,0 +1,262 @@
+.first-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.5;
+    }
+  }
+
+  &__content-outer,
+  &__content {
+    position: relative;
+    min-height: 100vh;
+  }
+
+  &__content-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1140px;
+    width: calc(100% - 56px);
+    min-height: 100vh;
+    margin: 0 auto;
+  }
+
+  &__slide {
+    position: relative;
+
+    > img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    max-width: 646px;
+    font-family: $sora;
+    font-size: 100px;
+    line-height: 110px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 15px 0 55px;
+
+    @include tMax {
+      font-size: 60px;
+      line-height: 80px;
+    }
+
+    @include mMax {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    padding-left: 13px;
+    padding-bottom: 27px;
+
+    @include mMax {
+      display: block;
+
+      a {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 361px;
+    font-size: 24px;
+    line-height: 31px;
+    margin-left: 67px;
+
+    @include mMax {
+      margin-top: 26px;
+      margin-left: 0;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 169px;
+    right: 74px;
+
+    @include mMax {
+      right: 26px;
+    }
+
+    .custom-dots {
+      li + li {
+        margin-top: 20px;
+
+        @include mMax {
+          margin-top: 10px;
+        }
+      }
+
+      .custom-dot {
+        width: 100%;
+        font-family: $sora;
+        font-size: 20px;
+        line-height: 34px;
+        font-weight: 600;
+        text-align: right;
+        opacity: 0.5;
+        color: $white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        @include mMax {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        @include dMin {
+          &:hover {
+            font-size: 30px;
+          }
+        }
+      }
+
+      .slick-active .custom-dot {
+        font-size: 50px;
+        line-height: 85px;
+        opacity: 1;
+
+        @include mMax {
+          font-size: 20px;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 80px;
+    left: 80px;
+
+    @include tMax {
+      left: 28px;
+      bottom: 80px;
+      flex-direction: row;
+    }
+
+    @include mMax {
+      bottom: 28px;
+    }
+  }
+
+  &__socials-item {
+    font-family: $sora;
+    font-size: 18px;
+    line-height: 31px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.6);
+    position: relative;
+    transition: color 0.3s ease;
+
+    @include dMin {
+      &:hover {
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+
+    + .first-screen__socials-item {
+      margin-top: 40px;
+
+      &::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 2px;
+        background-color: $white;
+        opacity: 0.5;
+        position: absolute;
+        top: -22px;
+        left: 50%;
+        transform: translateX(-50%);
+        pointer-events: none;
+      }
+
+      @include tMax {
+        margin-top: 0;
+        margin-left: 20px;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__arrows {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 80px;
+    right: 80px;
+
+    @include mMax {
+      right: 28px;
+      bottom: 28px;
+    }
+  }
+
+  &__arrow {
+    width: 100px;
+    height: 24px;
+    position: relative;
+    cursor: pointer;
+
+    @include mMax {
+      width: 44px;
+    }
+
+    @include dMin {
+      &:hover svg {
+        opacity: 1;
+      }
+    }
+
+    svg {
+      width: 100%;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    &:first-child {
+      margin-right: 30px;
+
+      svg {
+        transform: rotate(180deg);
+        bottom: 2px;
+      }
+    }
+  }
+}

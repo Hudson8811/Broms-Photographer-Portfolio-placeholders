@@ -1,0 +1,12 @@
+.video
+	.blue-circle
+	img(src='./assets/images/circle.png' alt='')
+	.container.video__container
+		+tag('cases', 'video__tag')
+		.video__title latest backstage of July 2020
+		.video__wrapper
+			.video__preview
+				img(src='https://via.placeholder.com/1620x700' alt='')
+				+play('video__play')
+			.video__iframe
+				iframe(src='https://www.youtube.com/embed/tEPB7uzKuh4' allowfullscreen='' frameborder='0')

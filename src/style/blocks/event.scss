@@ -1,0 +1,157 @@
+.event {
+  position: relative;
+
+  > img {
+    position: absolute;
+    bottom: -48px;
+    left: 52px;
+    z-index: 2;
+    pointer-events: none;
+
+    @include mMax {
+      display: none;
+    }
+  }
+
+  &__container {
+    width: 1620px;
+    padding: 100px 0;
+    overflow: hidden;
+
+    @include mMax {
+      padding: 40px 0;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 -58px;
+    padding-left: 239px;
+    box-sizing: border-box;
+
+    @include dBook {
+      padding-left: 58px;
+    }
+
+    @include mMax {
+      display: block;
+      padding-left: 0;
+    }
+  }
+
+  &__content {
+    width: calc(41% - 116px);
+    margin: 0 58px;
+    padding-bottom: 13px;
+
+    @include mMax {
+      width: 100%;
+    }
+  }
+
+  &__pic {
+    width: calc(59% - 116px);
+    margin: 0 58px;
+    position: relative;
+
+    @include mMax {
+      width: 100%;
+      padding-top: 13px;
+    }
+
+    img {
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      max-width: 570px;
+
+      &:last-child {
+        position: absolute;
+        top: 50%;
+        right: -150px;
+        z-index: 1;
+        transform: translateY(-50%) scale(0.825);
+        opacity: 0.2;
+      }
+    }
+  }
+
+  &__title {
+    font-family: $sora;
+    font-size: 44px;
+    line-height: 53px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 6px 0 30px;
+
+    @include dBook {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 31px;
+    color: #9ca7b8;
+    margin-bottom: 70px;
+
+    @include dBook {
+      font-size: 14px;
+      line-height: 27px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__join-us {
+    font-family: $sora;
+    font-size: 28px;
+    line-height: 34px;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  &__schedule {
+    display: flex;
+
+    @include tMax {
+      display: block;
+    }
+  }
+
+  &__schedule-item {
+    &:not(:last-child) {
+      margin-right: 52px;
+
+      @include tMax {
+        margin-bottom: 15px;
+      }
+    }
+
+    p {
+      &:first-child {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      &:last-child {
+        font-size: 16px;
+        line-height: 27px;
+        color: #9ca7b8;
+      }
+    }
+  }
+
+  &__btn {
+    width: 162px;
+    margin-top: 60px;
+
+    @include mMax {
+      margin-top: 20px;
+    }
+  }
+}

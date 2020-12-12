@@ -1,0 +1,45 @@
+.form {
+  &__title {
+    font-family: $sora;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+
+    @include dBook {
+      font-size: 24px;
+      line-height: 33px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 31px;
+    color: #9ca7b8;
+    margin-bottom: 40px;
+
+    @include dBook {
+      font-size: 14px;
+      line-height: 27px;
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    margin: 0 -10px 20px;
+
+    input {
+      width: calc(33.3333% - 20px);
+      margin: 0 10px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &__submit {
+    width: 110px;
+  }
+}

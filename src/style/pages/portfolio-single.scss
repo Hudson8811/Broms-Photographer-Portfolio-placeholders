@@ -1,0 +1,329 @@
+.portfolio-single {
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    position: absolute;
+    pointer-events: none;
+
+    &.circle-1 {
+      right: 0;
+      top: 4.3%;
+    }
+
+    &.circle-2 {
+      top: 38.2%;
+      left: 0;
+    }
+
+    &.circle-3 {
+      bottom: 2.8%;
+      right: 0;
+    }
+  }
+
+  .blue-circle {
+    position: absolute;
+
+    &--1 {
+      top: 60px;
+      right: 0;
+    }
+
+    &--2 {
+      top: 38.2%;
+      left: 0;
+    }
+
+    &--3 {
+      bottom: -6%;
+      right: 0;
+    }
+  }
+
+  &__container {
+    padding: 200px 0;
+
+    @include mMax {
+      padding: 40px 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+
+    @include dBook {
+      margin-bottom: 54px;
+    }
+
+    @include mMax {
+      margin-bottom: 0;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+
+    @include dBook {
+      padding-bottom: 26px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 140px;
+    }
+
+    svg {
+      max-width: 45px;
+      height: 45px;
+      opacity: 0.3;
+      margin-right: 10px;
+    }
+
+    @include mMax {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__info-item-group p {
+    &:first-child {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &:last-child {
+      font-size: 16px;
+      line-height: 27px;
+      color: #9ca7b8;
+    }
+  }
+
+  &__content {
+    max-width: 750px;
+    margin: 80px auto;
+
+    @include mMax {
+      margin: 26px 0;
+    }
+  }
+
+  &__title {
+    font-family: $sora;
+    font-size: 32px;
+    line-height: 38px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+
+    @include dBook {
+      font-size: 24px;
+      line-height: 33px;
+    }
+
+    @include mMax {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 27px;
+    color: #9ca7b8;
+
+    @include dBook {
+      font-size: 14px;
+      line-height: 27px;
+    }
+
+    p + p {
+      margin-top: 26px;
+
+      @include mMax {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  &__gallery-1 {
+    width: 100%;
+    height: 600px;
+
+    @include mMax {
+      height: 260px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__gallery-2 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 600px;
+
+    @include mMax {
+      height: 260px;
+    }
+
+    img {
+      width: 49%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 40px;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &__nav-btn {
+    display: flex;
+    align-items: flex-start;
+    max-width: 200px;
+
+    @include mMax {
+      justify-content: center;
+    }
+
+    @include dMin {
+      &:hover {
+        span,
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: bold;
+      text-transform: uppercase;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+
+    svg {
+      width: 100%;
+      max-width: 50px;
+      height: 13px;
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    &--prev {
+      svg {
+        transform: rotate(180deg);
+        margin-right: 20px;
+        padding-bottom: 12px;
+      }
+    }
+
+    &--next {
+      span {
+        text-align: right;
+      }
+
+      svg {
+        margin-left: 20px;
+      }
+    }
+
+    @include mMax {
+      margin-left: auto;
+      margin-right: auto;
+
+      & + .portfolio-single__nav-btn {
+        margin-top: 26px;
+      }
+    }
+  }
+}
+
+.related-case {
+  padding-top: 190px;
+
+  @include mMax {
+    padding-top: 40px;
+  }
+
+  &__tag {
+    justify-content: center;
+    margin-bottom: 6px;
+  }
+
+  &__title {
+    font-family: $sora;
+    font-size: 44px;
+    line-height: 53px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 60px;
+
+    @include dBook {
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    margin: 0 -15px;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  .news-item {
+    @include mMax {
+      width: 100%;
+    }
+
+    &__pic {
+      height: 460px;
+
+      @include mMax {
+        height: 260px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.5;
+        margin-right: 10px;
+      }
+    }
+
+    &__content {
+      margin-top: -14px;
+      padding: 0 20px;
+    }
+  }
+}

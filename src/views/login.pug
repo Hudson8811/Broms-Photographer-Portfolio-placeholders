@@ -1,0 +1,28 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.login
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.login__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.login__container
+			+title('Log in')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Log in'}], 'login__breadcrumbs')
+			form.login__form(action='', method='POST')
+				.login__photo
+					img(src='https://via.placeholder.com/120x120' alt='')
+				.login__surname Ariana Bennett
+				.login__note This is restricted area. Please enter your password below to authenticate
+				.login__wrapper
+					+input('password', 'pass', 'Password')
+					+button('login', 'login__submit')(type='submit')

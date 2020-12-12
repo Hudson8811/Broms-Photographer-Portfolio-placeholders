@@ -1,0 +1,27 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.page404
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.page404__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.page404__container
+			+title('Oops!')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: '404'}], 'page404__breadcrumbs')
+
+			form.page404__form(action='', method='GET')
+				.page404__title 404
+				.page404__subtitle
+					p Sorry, we can’t find the required page!
+					p Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur officia ullamco sunt nisi velit culpa.
+				+input('search', 'search', 'Search...')

@@ -1,0 +1,9 @@
+form.form(action='', method='POST')
+	.form__title Send us a message
+	.form__subtitle Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur officia ullamco sunt nisi velit culpa.
+	.form__inputs
+		+input('text', 'name', 'Name *')(required)
+		+input('email', 'email', 'Email *')(required)
+		+input('text', 'phone', 'Phone')
+	+input('textarea', 'comment', 'Comment')
+	+button('send', 'form__submit')(type='submit')

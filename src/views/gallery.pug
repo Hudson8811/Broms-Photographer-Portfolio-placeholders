@@ -1,0 +1,48 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-portfolio.jpg' alt='')
+		.container.top-block__container
+			+title('Gallery')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Gallery'}], 'top-block__breadcrumbs')
+	.gallery
+		img(src='./assets/images/circle/gallery.png' alt='')
+		.blue-circle
+		.gallery__block
+			.gallery__part.gallery__part--25
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x760')
+					img(src='https://via.placeholder.com/460x760' alt='')
+			.gallery__part.gallery__part--25.gallery__part--small
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x360')
+					img(src='https://via.placeholder.com/460x360' alt='')
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x360')
+					img(src='https://via.placeholder.com/460x360' alt='')
+			.gallery__part.gallery__part--50
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/940x760')
+					img(src='https://via.placeholder.com/940x760' alt='')
+		.gallery__block.gallery__block--reverse
+			.gallery__part.gallery__part--25
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x760')
+					img(src='https://via.placeholder.com/460x760' alt='')
+			.gallery__part.gallery__part--25.gallery__part--small
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x360')
+					img(src='https://via.placeholder.com/460x360' alt='')
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/460x360')
+					img(src='https://via.placeholder.com/460x360' alt='')
+			.gallery__part.gallery__part--50
+				a.gallery__pic(data-fancybox='gallery1', href='https://via.placeholder.com/940x760')
+					img(src='https://via.placeholder.com/940x760' alt='')
+		+button('more photos', 'gallery__more')

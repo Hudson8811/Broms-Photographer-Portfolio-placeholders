@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<monthly>
+
+
+	<event>
+		<id>1</id>
+		<name>3 spaces available</name>
+		<startdate>2020-12-8</startdate>
+		<enddate>2020-12-8</enddate>
+		<starttime>12:00</starttime>
+		<endtime>2:00</endtime>
+		<url></url>
+	</event>
+
+	<event>
+		<id>2</id>
+		<name>2 spaces available</name>
+		<startdate>2020-12-8</startdate>
+		<enddate>2020-12-8</enddate>
+		<starttime>10:00</starttime>
+		<endtime>11:00</endtime>
+		<url></url>
+	</event>
+
+	<event>
+		<id>3</id>
+		<name>2 spaces available</name>
+		<startdate>2020-12-8</startdate>
+		<enddate>2020-12-8</enddate>
+		<starttime>2:00</starttime>
+		<endtime>4:00</endtime>
+		<url></url>
+	</event>
+
+	<event>
+		<id>4</id>
+		<name>2 spaces available</name>
+		<startdate>2020-12-11</startdate>
+		<enddate>2020-12-11</enddate>
+		<starttime>2:00</starttime>
+		<endtime>4:00</endtime>
+		<url></url>
+	</event>
+
+	<event>
+		<id>5</id>
+		<name>2 spaces available</name>
+		<startdate>2020-12-16</startdate>
+		<enddate>2020-12-16</enddate>
+		<starttime>2:00</starttime>
+		<endtime>4:00</endtime>
+		<url></url>
+	</event>
+
+
+</monthly>

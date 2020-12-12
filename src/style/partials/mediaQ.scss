@@ -1,0 +1,29 @@
+@mixin mMax {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tMax {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin dMax {
+  @media (max-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin dBook {
+  @media (max-width: 1368px) {
+    @content;
+  }
+}
+
+@mixin dMin {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

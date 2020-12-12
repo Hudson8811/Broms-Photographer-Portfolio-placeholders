@@ -1,0 +1,172 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('mobile photography')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Blog'}, {href: '#', text: 'Mobile Photography'}], 'top-block__breadcrumbs')
+	.post
+		img(src='./assets/images/circle/post-2.png' alt='')
+		img(src='./assets/images/circle/post-3.png' alt='')
+		.blue-circle.blue-circle--1
+		.blue-circle.blue-circle--2
+		.container.post__container
+			.post__outer
+				.post__main
+					.post__top
+						.post__pic
+							img(src='https://via.placeholder.com/750x400' alt='')
+							p Fashion
+						ul.post__publication
+							li Dec 13, 2020
+							li Marco Lutinochi
+							li 3 comments
+					.post__content
+						.post__title 12 rules of mobile photography
+						.post__text
+							p <span class="big-letter">T</span> The photographer is not necessarily the one with the SLR camera. You can take pictures with your smartphone
+								|  and amaze the world with beautiful pictures. At the same time, the quality of images with the right approach will be at a high level. What
+								|  to look for when you take a photo first, you need to know your phone number. This is your tool for obtaining high-quality images, which means
+								|  that it must be configured correctly. Firstly, check the cleanliness of the camera (the phone camera must be wiped) and its correct setting.
+								|  Checking the camera for cleanliness and setting it up correctly.
+						+quote('Photography captures eternity, in fact, being proof that everything is only a short moment in the eyes of eternity. Photos keep secrets like humans. I wish you more practice and beautiful photos!',
+									'Ali Smith',
+									'post__quote')
+						.post__text
+							p To quickly fix the focus anywhere, you need to make a long tap on the display. The exposure will lock and “AE / Focus lock” appears at the top of the display.
+								|  By clicking anywhere on the screen again, the focus will return to automatic mode and the exposure will be reset.
+							p Exposure is simply the brightness of the picture. It's bad when the picture is too light or too dark. The light in the photo cannot be corrected even with processing.
+						.tags.post__tags
+							.tags__wrapper
+								.tags__item Portraits
+								.tags__item Fashion
+					.post-author
+						.blue-circle
+						.post-author__pic
+							img(src='https://via.placeholder.com/107x107' alt='')
+							img.circle(src='assets/images/circle/post-1.png' alt='')
+						.post-author__content
+							.post-author__name Marry Johnson
+							.post-author__about In my blog I write about the processing of mobile photos and the features of shooting on a mobile phone.
+																	|  I create presets for the Lightroom application and really love to create visual design.
+							+socials([{href: '#', text: 'Fb'}, {href: '#', text: 'Tw'}, {href: '#', text: 'In'}], 'post-author__socials')
+					.post__nav
+						a.post__nav-btn.post__nav-btn--prev(href='#')
+							svg
+								use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+							span the image of the bride
+						a.post__nav-btn.post__nav-btn--next(href='#')
+							span Love in the big city!
+							svg
+								use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+					.post__recent
+						p Recent posts
+						.post__recent-wrapper
+							a(href="#").news-item
+								.news-item__pic
+									img(src='https://via.placeholder.com/360x400' alt='')
+								.news-item__content
+									.news-item__date Oct 14, 2020
+									.news-item__title personal session
+									.news-item__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris...
+									.news-item__more
+										svg
+											use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide')
+							a(href="#").news-item
+								.news-item__pic
+									img(src='https://via.placeholder.com/360x400' alt='')
+								.news-item__content
+									.news-item__date Nov 27, 2020
+									.news-item__title Love stories
+									.news-item__text For a special atmosphere of magic and fairy tale, you can use candles and...
+									.news-item__more
+										svg
+											use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide')
+					.comments
+						.comments__title discussion
+						.comments__wrapper
+							.comments__item
+								.comments__top
+									.comments__group
+										.comments__author-pic
+											img(src='https://via.placeholder.com/40x40' alt='')
+										a.comments__author-name(href='#') Claudia Sinclair
+										.comments__date Dec 13, 2020 at 09:20 am
+									a.comments__reply(href='#') Reply
+								.comments__text Hello! Please tell me how to effectively and independently learn to photograph from scratch?
+							.comments__item.comments__item--reply
+								.comments__top
+									.comments__group
+										.comments__author-pic
+											img(src='https://via.placeholder.com/40x40' alt='')
+										a.comments__author-name(href='#') Frankie Walls
+										.comments__date Dec 28, 2020 at 07:15 pm
+									a.comments__reply(href='#') Reply
+								.comments__text By far, the most affordable option is self-study, but you will need to find a lot of teaching aids and spend many hours studying them.
+																|  Certain results may appear in a few weeks or months if you show proper perseverance.
+					form.form(action='', method='POST')
+						.form__title Leave a comment
+						.form__inputs
+							+input('text', 'name', 'Name *')(required)
+							+input('email', 'email', 'Email *')(required)
+							+input('text', 'phone', 'Phone')
+						+input('textarea', 'comment', 'Comment')
+						+button('post comment', 'post__submit')(type='submit')
+				.sidebar
+					+input('search', 'search', 'Search...')
+					.blog-author
+						.blog-author__pic
+							img(src='https://via.placeholder.com/120x120' alt='')
+						.blog-author__name Ariana Bennett
+						.blog-author__text Hi! I`m an authtor of this blog. I would be glad if my posts are useful to you.
+						+socials([{href: '#', text: 'Fb'}, {href: '#', text: 'Tw'}, {href: '#', text: 'In'}], 'blog-author__socials')
+					.sidebar__recent
+						p Recent posts
+						.sidebar__recent-wrapper
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70x70' alt='')
+								.sidebar__recent-group
+									p Discuss the important point with the model in advance.
+									p Dec 13, 2020
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70x70' alt='')
+								.sidebar__recent-group
+									p Rain. Tips on how to save the situation.
+									p Dec 20, 2020
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70x70' alt='')
+								.sidebar__recent-group
+									p I'll tell you briefly about what technique I'm using.
+									p Dec 27, 2020
+					.sidebar__banner(style='background-image: url("assets/images/post/banner.jpg")')
+						p.label Photography <br> <span>studio</span>
+						p.percent -20%
+						+button('Order now', 'sidebar__order-btn')
+					.recent-comments
+						.recent-comments__title Recent comments
+						.recent-comments__wrapper
+							.recent-comments__item <a>Bruce Jones</a> on expensive professional camera needed…
+							.recent-comments__item <a>Scott Bush</a> on my favorite lens is Nikkor 50mm and Fujinon 35…
+							.recent-comments__item <a>Stacey Longman</a> on the main thing is to try and choose…
+					.tags
+						.tags__title Tags
+						.tags__wrapper
+							.tags__item Portraits
+							.tags__item Fashion
+							.tags__item Nature
+							.tags__item Music
+							.tags__item Studio
+							.tags__item Portraits

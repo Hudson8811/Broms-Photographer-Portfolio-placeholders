@@ -1,0 +1,453 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-portfolio.jpg' alt='')
+		.container.top-block__container
+			+title('Portfolio')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Portfolio'}], 'top-block__breadcrumbs')
+	.portfolio
+		img.circle-1(src='./assets/images/circle/portfolio-1.png' alt='')
+		img.circle-2(src='./assets/images/circle/portfolio-2.png' alt='')
+		.blue-circle.blue-circle--1
+		.blue-circle.blue-circle--2
+		.container.portfolio__container
+			.portfolio__tabs
+				.portfolio__tab-item.active all
+				.portfolio__tab-item fashion
+				.portfolio__tab-item lifestyle
+				.portfolio__tab-item Studio
+				.portfolio__tab-item portraits
+			.portfolio__content
+				.portfolio__content-item(style='display: block')
+					.portfolio__wrapper
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title tourist photography
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Boston
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Des Moines
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Las Vegas
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span New York
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Manchester
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Thornton
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Love stories
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Miami
+						.news-item
+							.news-item__pic
+								img(src='https://via.placeholder.com/360x460' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Los Angeles
+					+button('more works', 'portfolio__more')
+				.portfolio__content-item
+					.portfolio__wrapper
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-1.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-2.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-3.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-4.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-5.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-6.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-7.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-8.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-9.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+					+button('more works', 'portfolio__more')
+				.portfolio__content-item
+					.portfolio__wrapper
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-1.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-2.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-3.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-4.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-5.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-6.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-7.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-8.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-9.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+					+button('more works', 'portfolio__more')
+				.portfolio__content-item
+					.portfolio__wrapper
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-1.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-2.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-3.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-4.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-5.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-6.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-7.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-8.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-9.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+					+button('more works', 'portfolio__more')
+				.portfolio__content-item
+					.portfolio__wrapper
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-1.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-2.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-3.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-4.jpg' alt='')
+							.news-item__content
+								.news-item__title Family session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-5.jpg' alt='')
+							.news-item__content
+								.news-item__title Commercial session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-6.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-7.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-8.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+						.news-item
+							.news-item__pic
+								img(src='assets/images/portfolio/item-9.jpg' alt='')
+							.news-item__content
+								.news-item__title Personal session
+								.news-item__text
+									svg
+										use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+									span Chicago
+					+button('more works', 'portfolio__more')

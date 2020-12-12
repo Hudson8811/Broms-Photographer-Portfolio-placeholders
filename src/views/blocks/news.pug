@@ -1,0 +1,30 @@
+.news
+	.blue-circle
+	img(src='./assets/images/circle-2.png' alt='')
+	.container.news__container
+		.news__wrapper
+			a(href="#").news-item
+				.news-item__pic
+					img(src='https://via.placeholder.com/450x400' alt='')
+				.news-item__content
+					.news-item__date Oct 14, 2020
+					.news-item__title Tips and tricks for commerci...
+					.news-item__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur ad...
+					.news-item__more
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide')
+			a(href="#").news-item
+				.news-item__pic
+					img(src='https://via.placeholder.com/450x400' alt='')
+				.news-item__content
+					.news-item__date Oct 14, 2020
+					.news-item__title how to prepare a personal ses...
+					.news-item__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur ad...
+					.news-item__more
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide')
+			a(href="#").news__content
+				+tag('news and articles')
+				.news__title Latest in Broms
+				.news__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur ad. Duis officia ullamco sunt nisi velit culpa.
+				+button('read blog', 'news__btn')

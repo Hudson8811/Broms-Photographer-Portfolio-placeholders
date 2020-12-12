@@ -1,0 +1,38 @@
+footer.footer
+	.footer__top
+		.footer__col
+			.footer__logo
+				svg
+					use(xlink:href='./assets/images/svg/sprite.svg#logo')
+			.footer__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur ad. Duis officia ullamco sunt nisi velit culpa.
+			+socials([{href: '#', text: 'Fb'}, {href: '#', text: 'Tw'}, {href: '#', text: 'In'}], 'footer__socials')
+		.footer__col
+			.footer__title Newsletter
+			.footer__text Pariatur voluptate occaecat nostrud est exercitation.
+			form.footer__subs
+				+input('email', 'email', 'Enter your email')
+				+button('subscribe', 'footer__subs-btn')(type='submit')
+		.footer__col
+			.footer__title Contact us
+			.footer__text Pariatur voluptate occaecat nostrud est exercitation.
+			.contacts-footer
+				.contacts-footer__col
+					.contacts-footer__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#mail')
+						a(href='mailto:info@broms.com') Info@broms.com
+					.contacts-footer__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#phone')
+						a(href='tel:+13547896452') +1 (354) 78 96 452
+				.contacts-footer__col
+					.contacts-footer__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+						span Pariatur voluptate occaecat nostrud est exercitation.
+	.footer__bottom
+		.footer__copyrights © All rights reserved. Broms 2020.
+		.footer__group
+			a(href='#' target='_blank') Terms and Conditions
+			span -
+			a(href='#' target='_blank') Privacy Policy

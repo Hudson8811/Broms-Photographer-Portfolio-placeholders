@@ -1,0 +1,93 @@
+.contacts {
+  position: relative;
+
+  > img {
+    position: absolute;
+    top: 28%;
+    right: 0;
+  }
+
+  .blue-circle {
+    width: 794px;
+    height: 794px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__container {
+    padding: 201px 0 100px;
+
+    @include mMax {
+      padding: 40px 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 -65px;
+
+    @include dBook {
+      margin: 0;
+    }
+
+    @include mMax {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    width: calc(69% - 130px);
+    margin: 0 65px;
+
+    @include dBook {
+      margin: 0;
+      width: calc(69% - 65px);
+    }
+
+    @include mMax {
+      width: 100%;
+
+      .form__inputs {
+        display: block;
+        margin: 0;
+
+        input {
+          width: 100%;
+          margin: 0;
+
+          & + input {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      textarea {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+
+    &:last-child {
+      width: calc(31% - 130px);
+      margin: 0 65px;
+
+      @include dBook {
+        width: 31%;
+        margin: 0;
+        margin-left: auto;
+      }
+
+      @include mMax {
+        width: 100%;
+        padding-bottom: 26px;
+        order: -1;
+      }
+    }
+  }
+}

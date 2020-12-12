@@ -1,0 +1,362 @@
+.about-mission {
+  position: relative;
+  box-sizing: border-box;
+  padding: 206px 0 0;
+
+  @include mMax {
+    padding: 40px 0 0;
+  }
+
+  .blue-circle {
+    position: absolute;
+    top: -143px;
+    left: -326px;
+  }
+
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 74px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &__text-block {
+    box-sizing: border-box;
+    max-width: 461px;
+    padding-top: 80px;
+    padding-right: 20px;
+  }
+
+  &__image-block {
+    position: relative;
+    width: calc(100% - 461px);
+    max-width: 585px;
+
+    &__content {
+      position: relative;
+      z-index: 2;
+      display: block;
+      width: 100%;
+
+      &-bg {
+        position: absolute;
+        z-index: 1;
+        top: 85px;
+        right: -240px;
+        display: block;
+        width: 443px;
+      }
+    }
+  }
+
+  &__back-object {
+    position: absolute;
+    top: 704px;
+    left: 0;
+    height: 401px;
+    width: 401px;
+    overflow: hidden;
+
+    svg {
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      left: -113px;
+    }
+
+    @include mMax {
+      top: 50%;
+      width: 100px;
+      height: 100px;
+
+      svg {
+        left: -50%;
+      }
+    }
+  }
+}
+
+.about-bars {
+  &__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-top: 80px;
+    flex-wrap: wrap;
+    margin-top: 74px;
+    margin-bottom: -60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: calc(100% - 116px);
+    padding-right: 50px;
+
+    @include mMax {
+      display: block;
+      margin-top: 40px;
+      padding-top: 40px;
+      padding-right: 0;
+      margin-bottom: -20px;
+      max-width: calc(100% - 56px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 48%;
+    max-width: 407px;
+    margin-bottom: 60px;
+
+    @include mMax {
+      width: 100%;
+      max-width: none;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 124px;
+    width: 124px;
+    flex-shrink: 0;
+
+    @include mMax {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+  &__persent {
+    position: absolute;
+    display: block;
+    font-family: $sora;
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: #ffffff;
+
+    &-small {
+      margin-left: -4px;
+      font-family: $sora;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    box-sizing: border-box;
+    padding-left: 23px;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: 10px;
+    font-family: $sora;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    text-transform: capitalize;
+    color: #ffffff;
+
+    @include mMax {
+      font-size: 18px;
+      line-height: 21px;
+    }
+  }
+
+  &__desc {
+    display: block;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 170%;
+    color: #9ca7b8;
+
+    @include mMax {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
+}
+
+.about-me-contacts {
+  position: relative;
+  box-sizing: border-box;
+  padding-bottom: 200px;
+
+  @include mMax {
+    padding-bottom: 40px;
+  }
+
+  .blue-circle {
+    position: absolute;
+    top: -80px;
+    right: 17px;
+  }
+
+  .about-mission__back-object {
+    top: 76px;
+    left: auto;
+    right: 0;
+
+    svg {
+      left: auto;
+      right: -83px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 47px 0 0;
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  .form {
+    padding-top: 60px;
+    max-width: 430px;
+    padding-right: 25px;
+
+    @include mMax {
+      max-width: none;
+      padding-top: 40px;
+      padding-right: 0;
+    }
+
+    .form__title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 120%;
+      text-transform: capitalize;
+      color: #ffffff;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      height: 106px;
+    }
+
+    .form__submit {
+      width: 181px;
+
+      @include mMax {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info {
+    box-sizing: border-box;
+    max-width: 545px;
+    padding-right: 20px;
+
+    @include mMax {
+      max-width: none;
+      padding-right: 0;
+    }
+
+    .form__title {
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .form__subtitle {
+      margin-bottom: 60px;
+
+      @include mMax {
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 25px;
+      }
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-wrap: wrap;
+
+      @include mMax {
+        display: block;
+      }
+
+      &__item {
+        width: 48%;
+        max-width: 240px;
+
+        @include mMax {
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      .info__item + .info__item {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+
+        @include mMax {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+.form__actions {
+  input:focus,
+  textarea:focus {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+  }
+}
+
+.mission-event {
+  .event__content {
+    box-sizing: border-box;
+    padding-right: 10px;
+    padding-bottom: 13px;
+
+    .event__btn {
+      width: 151px;
+    }
+  }
+
+  .services__text + .services__text {
+    margin-top: 30px;
+
+    @include mMax {
+      margin-top: 10px;
+    }
+  }
+
+  .event__pic {
+    img {
+      max-width: 584px;
+    }
+    img:last-child {
+      opacity: 1;
+
+      transform: translateY(-50%) scale(0.76);
+    }
+  }
+
+  .event__container {
+    padding: 0;
+  }
+}

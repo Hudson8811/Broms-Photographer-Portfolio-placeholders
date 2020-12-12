@@ -1,0 +1,112 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('Testimonials')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Testimonials'}], 'top-block__breadcrumbs')
+		
+	.testimonials
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.container.testimonials__catalog
+			.testimonials__catalog-row
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Johnny Quicker
+					.testimonials__item-text The order was completed on time at a high level. It was easy to work with the consistency in plans and actions. Thanks for the work done, I will continue to cooperate further.
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Oliver Mitchell
+					.testimonials__item-text Thank you so much for the warm moments of that day. I would like to wish you to have the same unquenchable charge of positive and mood both at work and outside it. 
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Sebastian Turner
+					.testimonials__item-text I was lucky to get to a photo session with you. Thank you so much for the work done, you are professionals in your field. It's very cool and easy to work with you. 1.5 hours passed unnoticed. Thanks to your approach and professionalism, everything went at the highest level.
+
+			.testimonials__catalog-row
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Charlotte Harris
+					.testimonials__item-text I still fondly remember the day of my photo session, which took place lightly. Everything was wonderful. Relaxed atmosphere, positive communication, assistance in staging. It was very pleasant and easy to work with him! I wish you successful creativity and great.
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Eloise Roberts
+					.testimonials__item-text We would like to thank you for the excellent work. Our wedding was 09/05/2020. We are very pleased with you. It was very easy and very pleasant to work with you. You are so sincere and sociable. The photos are just superb. The quality is excellent. 
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Isabelle Morgan
+					.testimonials__item-text Photos are vivid, bright, all touching moments are captured. Thanks to you, the memory of the day of the baptism of our daughter will remain with us. Thanks!
+
+			.testimonials__catalog-row
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Matthew Price
+					.testimonials__item-text Thank you very much. I would like to express my deep gratitude for the excellent work and for the positive attitude that is felt during the photography. 
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Hanna Lopez
+					.testimonials__item-text You helped to capture one of the most important days in our lives and you did it professionally. I liked the work absolutely everything; it was easy to find a common.
+				
+				.testimonials__item
+					.testimonials__item-heading
+						.testimonials__item-icon
+							img(src="https://via.placeholder.com/100x100")
+						.testimonials__item-name Josephine Parker
+					.testimonials__item-text The result of the photographs is very natural and makes us smile. We were very pleased with the choice of the photographer and only under a pleasant impression.
+	
+	.testimonials-form-block
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.container.testimonials-form-block__container
+			form.form.form__actions(action='', method='POST')
+				.form__title Leave your review
+				.form__inputs
+					+input('text', 'name', 'Name *')(required)
+					+input('email', 'email', 'Email *')(required)
+					+input('text', 'phone', 'Phone')
+				+input('textarea', 'comment', 'Comment')
+				+button('post review', 'form__submit')(type='submit')
+			.testimonials-form-block__photography
+				img(src="assets/images/testimonials/testimonials-cam.png").testimonials-form-block__photography-bg
+				.testimonials-form-block__photography-title Photography
+				.testimonials-form-block__photography-desc studio
+				.testimonials-form-block__photography-persent -20%

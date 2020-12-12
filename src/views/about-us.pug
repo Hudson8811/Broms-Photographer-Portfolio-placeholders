@@ -1,0 +1,251 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'About us'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('About us')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'About us'}], 'top-block__breadcrumbs')
+	.about-team
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.about-team__container-wrapper
+			.container.about-team__container
+				.about-team__text
+					+tag('who we are', 'stats__tag')
+					.services__title about our team #[span(class="nowrap-span") of professionals] 
+					.services__text We are a friendly team of professionals united by one goal to make your dreams and wishes come true so that you are guaranteed to get the expected result. We are always open to cooperation and are ready to support interesting projects.
+					.about-team__catalog
+						.about-team__catalog-item
+							.about-team__catalog-number 283
+							.about-team__catalog-text pounds of equipment
+						.about-team__catalog-item
+							.about-team__catalog-number 859
+							.about-team__catalog-text happy clients
+						.about-team__catalog-item
+							.about-team__catalog-number 942
+							.about-team__catalog-text photos for magazines
+						.about-team__catalog-item
+							.about-team__catalog-number 763
+							.about-team__catalog-text studio sessions
+				.about-team__frame
+					img.about-team__frame-bg(src="https://via.placeholder.com/865x700")
+					+play('', 'play-part', true, 'https://www.youtube.com/embed/tEPB7uzKuh4')(data-fancybox)
+	
+	.about-professionals
+		.container
+			+tag('team', 'stats__tag')
+			.services__title our team of professionals
+		.about-professionals__slider
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x460' alt='')
+					.services__price
+						p.services__name Eleanor Peterson
+						p.services__price-num Designer
+					ul.about-professionals__social
+						li
+							a(href="#") Fb
+						li -
+						li
+							a(href="#") Tw
+						li -
+						li
+							a(href="#") In
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x460' alt='')
+					.services__price
+						p.services__name Nicholas Roberts
+						p.services__price-num Photographer
+					ul.about-professionals__social
+						li
+							a(href="#") Fb
+						li -
+						li
+							a(href="#") Tw
+						li -
+						li
+							a(href="#") In
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x460' alt='')
+					.services__price
+						p.services__name Alice Tompson
+						p.services__price-num Visagiste
+					ul.about-professionals__social
+						li
+							a(href="#") Fb
+						li -
+						li
+							a(href="#") Tw
+						li -
+						li
+							a(href="#") In
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x460' alt='')
+					.services__price
+						p.services__name Love stories
+						p.services__price-num from 
+					ul.about-professionals__social
+						li
+							a(href="#") Fb
+						li -
+						li
+							a(href="#") Tw
+						li -
+						li
+							a(href="#") In
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x460' alt='')
+					.services__price
+						p.services__name Personal session
+						p.services__price-num from 
+					ul.about-professionals__social
+						li
+							a(href="#") Fb
+						li -
+						li
+							a(href="#") Tw
+						li -
+						li
+							a(href="#") In
+	
+	.about-us-contacts
+		.container
+			form.form.form__actions( method='POST')
+				.form__title Contact us now
+				.form__subtitle Contact us now and find out all the details about the upcoming photo shoot. Send us a request and we will contact you in 15 minutes.
+				.form__inputs
+					+input('text', 'name', 'Enter your name')(required)
+					+input('email', 'email', 'Enter your email')(required)
+					+input('text', 'phone', 'Enter your phone')
+					+button('Send request', 'form__submit')(type='submit')
+	.price
+		img(src='./assets/images/circle/services-2.png' alt='')
+		.blue-circle
+		.container.price__container
+			+tag('price', 'price__tag')
+			.price__title Choose your optimal plan
+			.price__wrapper
+				.price-item
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#umbrella')
+					.price-item__value 199 <sup>$</sup>
+					.price-item__tariff basic
+					ul.price-item__list
+						li Any event for 1 hours
+						li 1 photo in a unique frame
+						li Top 10 printed photos
+						li Up to 50 photos on CD
+						li 1 photographer
+					+button('get started', 'price-item__btn')
+				.price-item
+					.price-item__bg
+						img(src='assets/images/bg-price.jpg' alt='')
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#cross')
+					.price-item__value 399 <sup>$</sup>
+					.price-item__tariff ultra
+					ul.price-item__list
+						li Any event for 3 hours
+						li 5 photo in a unique frame
+						li Top 20 printed photos
+						li Up to 100 photos on CD
+						li 2 photographer
+					+button('get started', 'price-item__btn')
+				.price-item
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#drink')
+					.price-item__value 599 <sup>$</sup>
+					.price-item__tariff premium
+					ul.price-item__list
+						li Any event for 8 hours
+						li 10 photo in a unique frame
+						li Top 100 printed photos
+						li Up to 1000 photos on CD
+						li 3-5 photographer
+					+button('get started', 'price-item__btn')
+
+	//- .about-us-optimal
+	//- 	.blue-circle.filter
+	//- 	.about-mission__back-object
+	//- 		svg
+	//- 			use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+	//- 	.container
+	//- 		+tag('Price', 'stats__tag')
+	//- 		.services__title Choose your optimal plan
+	//- 		.about-us-optimal__catalog
+	//- 			.about-us-optimal__item
+	//- 				.about-us-optimal__bg
+	//- 					img(src="assets/images/about-us/about-us-optimal-bg.png")
+	//- 				.about-us-optimal__icon
+	//- 					svg
+	//- 						use(xlink:href='./assets/images/svg/sprite.svg#about-us--about-us-optimal-icon1')
+	//- 				.about-us-optimal__price-wrapper
+	//- 					.about-us-optimal__price 199 #[sup() $]
+	//- 					.about-us-optimal__plan basic
+	//- 				ul.about-us-optimal__points
+	//- 					li Any event for 1 hours
+	//- 					li 1 photo in a unique frame
+	//- 					li Top 10 printed photos
+	//- 					li Up to 50 photos on CD
+	//- 					li 1 photographer
+	//- 				button.button.form__submit(type="submit")
+	//- 					span get started
+				
+	//- 			.about-us-optimal__item
+	//- 				.about-us-optimal__bg
+	//- 					img(src="assets/images/about-us/about-us-optimal-bg.png")
+	//- 				.about-us-optimal__icon
+	//- 					svg
+	//- 						use(xlink:href='./assets/images/svg/sprite.svg#about-us--about-us-optimal-icon2')
+	//- 				.about-us-optimal__price-wrapper
+	//- 					.about-us-optimal__price 399 #[sup() $]
+	//- 					.about-us-optimal__plan ultra
+	//- 				ul.about-us-optimal__points
+	//- 					li Any event for 3 hours
+	//- 					li 5 photo in a unique frame
+	//- 					li Top 20 printed photos
+	//- 					li Up to 100 photos on CD
+	//- 					li 2 photographer
+	//- 				button.button.form__submit(type="submit")
+	//- 					span get started
+				
+	//- 			.about-us-optimal__item
+	//- 				.about-us-optimal__bg
+	//- 					img(src="assets/images/about-us/about-us-optimal-bg.png")
+	//- 				.about-us-optimal__icon
+	//- 					svg
+	//- 						use(xlink:href='./assets/images/svg/sprite.svg#about-us--about-us-optimal-icon3')
+	//- 				.about-us-optimal__price-wrapper
+	//- 					.about-us-optimal__price 599 #[sup() $]
+	//- 					.about-us-optimal__plan premium
+	//- 				ul.about-us-optimal__points
+	//- 					li Any event for 8 hours
+	//- 					li 10 photo in a unique frame
+	//- 					li Top 100 printed photos
+	//- 					li Up to 1000 photos on CD
+	//- 					li 3-5 photographer
+	//- 				button.button.form__submit(type="submit")
+	//- 					span get started
+

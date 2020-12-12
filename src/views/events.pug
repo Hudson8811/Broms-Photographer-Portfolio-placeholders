@@ -1,0 +1,123 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('Events')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Events'}], 'top-block__breadcrumbs')
+	.events
+		img(src='./assets/images/circle/events-1.png' alt='')
+		img(src='./assets/images/circle/events-2.png' alt='')
+		.blue-circle.blue-circle--1
+		.blue-circle.blue-circle--2
+		.container.events__container
+			.event-card
+				.event-card__outer
+					.event-card__pic
+						img(src='https://via.placeholder.com/550x450' alt='')
+						img.copy(src='https://via.placeholder.com/550x450' alt='')
+						.event-card__date-label
+							p 30
+							p Nov
+					.event-card__content
+						.event-card__title learn all about portrait art
+						.event-card__text I will share with you a few simple guidelines that will help you get up to speed with this type of shooting and take your first ...
+						.event-card__wrapper
+							.event-card__date
+								p Date
+								p November 30, 2020 <br> at 10:00 am
+							.event-card__date
+								p Location
+								p 1402 Atlantic Ave Brooklyn, NY 11216
+						.event-card__btns
+							+button('buy tickets', 'event-card__btn')
+							a.event-card__detail(href='#')
+								span view detail
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+			.event-card
+				.event-card__outer
+					.event-card__pic
+						img(src='https://via.placeholder.com/550x450' alt='')
+						img.copy(src='https://via.placeholder.com/550x450' alt='')
+						.event-card__date-label
+							p 2
+							p Dec
+					.event-card__content
+						.event-card__title Exhibition in the gallery 	Eli Bell
+						.event-card__text When my customers want atmospheric photos outside the studio, I suggest taking a walk along the city streets, but if the...
+						.event-card__wrapper
+							.event-card__date
+								p Date
+								p December 2, 2020 <br> at 8:00 am
+							.event-card__date
+								p Location
+								p 4278 SW 9th Terrace, Miami, <br> FL 33134
+						.event-card__btns
+							+button('buy tickets', 'event-card__btn')
+							a.event-card__detail(href='#')
+								span view detail
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+			.event-card
+				.event-card__outer
+					.event-card__pic
+						img(src='https://via.placeholder.com/550x450' alt='')
+						img.copy(src='https://via.placeholder.com/550x450' alt='')
+						.event-card__date-label
+							p 17
+							p Dec
+					.event-card__content
+						.event-card__title Event for light production
+						.event-card__text The simplest light scheme for subject shooting on one side, a reflector on the other, a diffuse flash. If you need to get an ...
+						.event-card__wrapper
+							.event-card__date
+								p Date
+								p December 17, 2020 <br> at 4:00 pm
+							.event-card__date
+								p Location
+								p 801 Montana Avenue, Santa <br> Monica, 90403
+						.event-card__btns
+							+button('buy tickets', 'event-card__btn')
+							a.event-card__detail(href='#')
+								span view detail
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+			.event-card
+				.event-card__outer
+					.event-card__pic
+						img(src='https://via.placeholder.com/550x450' alt='')
+						img.copy(src='https://via.placeholder.com/550x450' alt='')
+						.event-card__date-label
+							p 25
+							p Jan
+					.event-card__content
+						.event-card__title Exhibition of wedding photos
+						.event-card__text When my customers want atmospheric photos outside the studio, I suggest taking a walk along the city streets, but if th...
+						.event-card__wrapper
+							.event-card__date
+								p Date
+								p January 25, 2020 at <br> 11:00 am
+							.event-card__date
+								p Location
+								p 801 Montana Avenue, Santa <br> Monica, 90403
+						.event-card__btns
+							+button('buy tickets', 'event-card__btn')
+							a.event-card__detail(href='#')
+								span view detail
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+			+pagination('events__pagination')

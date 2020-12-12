@@ -1,0 +1,233 @@
+.header {
+  width: 100%;
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  transition: all 0.5s linear;
+
+  @include mMax {
+    padding: 0 25px;
+  }
+
+  &--move {
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__group {
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 88px;
+      height: 28px;
+    }
+  }
+
+  &__burger {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    margin-right: 40px;
+
+    @include mMax {
+      margin-right: 10px;
+    }
+
+    div {
+      width: 100%;
+      height: 2px;
+      border-radius: 1px;
+      background-color: $white;
+      opacity: 0.5;
+      position: relative;
+      top: 50%;
+      transition: 0.2s;
+      transform: translateY(-50%);
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $white;
+        position: absolute;
+        left: 0;
+        transition: transform 0.2s;
+      }
+
+      &::before {
+        bottom: 7px;
+      }
+
+      &::after {
+        top: 7px;
+      }
+    }
+
+    @include tMax {
+      &.is-active {
+        div {
+          background-color: transparent;
+
+          &:before,
+          &:after {
+            top: 50%;
+          }
+
+          &:before {
+            transform: rotate(45deg);
+          }
+
+          &:after {
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+
+    @include tMax {
+      position: absolute;
+      top: 70%;
+      left: 60px;
+      display: none;
+      background: rgba(3, 4, 4, 0.8);
+      padding: 20px;
+      box-sizing: border-box;
+      min-width: calc(100% - 140px);
+    }
+
+    @include mMax {
+      left: 25px;
+      min-width: calc(100% - 50px);
+    }
+
+    li {
+      position: relative;
+      + li {
+        margin-left: 60px;
+
+        @include tMax {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 800;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+
+        @include dMin {
+          &:hover {
+            opacity: 1;
+
+            & + .header__sub-menu {
+              transform: scaleY(1);
+            }
+
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        &.is-active {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      svg {
+        width: 13px;
+        height: 7px;
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  &__btn {
+    width: 138px;
+    margin-left: 60px;
+
+    @include mMax {
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
+
+  @include dMin {
+    &__sub-menu {
+      box-sizing: border-box;
+      position: absolute;
+      top: calc(100% + 16px);
+      left: -20px;
+      width: 220px;
+      padding: 20px;
+      margin-top: 10px;
+      margin-left: 0;
+      background: rgba(3, 4, 4, 0.8);
+      transform-origin: center top;
+      transition: 0.2s;
+      transform: scaleY(0);
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -26px;
+        height: 26px;
+        width: 100%;
+      }
+
+      &:hover {
+        transform: scaleY(1);
+      }
+
+      li {
+        & + li {
+          margin-left: 0;
+          margin-top: 10px;
+        }
+
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @include tMax {
+    &__sub-menu {
+      padding: 10px;
+      display: none;
+
+      li a {
+        font-size: 12px;
+      }
+    }
+  }
+}

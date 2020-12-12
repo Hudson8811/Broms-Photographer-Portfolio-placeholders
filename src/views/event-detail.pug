@@ -1,0 +1,58 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('World famous exhibition')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Events'}, {href: '#', text: 'World Famous Exhibition'}], 'top-block__breadcrumbs')
+	.event-detail
+		img(src='./assets/images/circle/event-detail.png' alt='')
+		.blue-circle
+		.container.event-detail__container
+			.event-detail__wrapper
+				.event-detail__col
+					.event-detail__title World famous exhibition
+					.event-detail__text
+						p The fact that photography has different meanings to different people is one of the many components of its appeal. Photography is such an important part of our life that it is now very difficult to imagine the world without it.  This is a program for working with photographs from the shooting stage to their upload and further publication.
+						p We cannot imagine a wedding without the opportunity to capture it on film, we would not be able to remember the growing up of children or the holidays if we did not have pictures. To quickly fix the focus anywhere, you need to make a long tap on the display.
+					.event-detail__collage
+						img(src='https://via.placeholder.com/720x350' alt='')
+						.event-detail__collage-group
+							.event-detail__collage-group-item
+								img(src='https://via.placeholder.com/340x250' alt='')
+								img(src='https://via.placeholder.com/340x250' alt='')
+							img(src='https://via.placeholder.com/340x540' alt='')
+				.event-detail__col
+					.info
+						.info__item
+							svg
+								use(xlink:href='./assets/images/svg/sprite.svg#contacts--calendar')
+							.info__item-wrapper
+								p date
+								p November 30, 2020 at 10:00 am
+						.info__item
+							svg
+								use(xlink:href='./assets/images/svg/sprite.svg#contacts--marker')
+							.info__item-wrapper
+								p location
+								p 1402 Atlantic Ave Brooklyn, NY
+						.info__item
+							svg
+								use(xlink:href='./assets/images/svg/sprite.svg#contacts--person')
+							.info__item-wrapper
+								p organizer
+								p Jackson Robinson
+					+button('buy ticket', 'event-detail__btn')

@@ -1,0 +1,30 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('booking')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'booking'}], 'top-block__breadcrumbs')
+	.monthly__wrapper
+		.blue-circle.filter
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.container
+			.monthly__title Choose a suitable date
+			.monthly__text Pariatur voluptate occaecat nostrud est exercitation. Culpa culpa laboris excepteur ad. Duis officia ullamco sunt nisi velit culpa.
+			div(class="monthly" id="booking")

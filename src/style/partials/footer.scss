@@ -1,0 +1,174 @@
+.footer {
+  position: relative;
+
+  &__top {
+    display: flex;
+
+    @include tMax {
+      display: block;
+    }
+  }
+
+  &__logo {
+    width: 98px;
+    height: 32px;
+    margin-bottom: 17px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__col {
+    width: 33.3333%;
+    padding: 60px;
+    padding-bottom: 52px;
+
+    @include dMax {
+      padding: 25px;
+    }
+
+    @include tMax {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    &:first-child {
+      background-color: #0b0d0e;
+    }
+
+    &:nth-child(2) {
+      background-color: #101215;
+    }
+
+    &:last-child {
+      background-color: #0b0d0e;
+    }
+  }
+
+  &__title {
+    font-family: $sora;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 27px;
+    color: #9ca7b8;
+    margin-bottom: 41px;
+  }
+
+  &__subs {
+    display: flex;
+
+    @include mMax {
+      display: block;
+
+      input {
+        margin-bottom: 10px;
+      }
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  &__subs-btn {
+    max-width: 151px;
+    width: 100%;
+    margin-left: 14px;
+
+    @include mMax {
+      max-width: none;
+      margin-left: 0;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+    height: 70px;
+
+    @include dMax {
+      padding: 0 25px;
+    }
+
+    @include mMax {
+      display: block;
+    }
+  }
+
+  &__group a,
+  &__group span,
+  &__copyrights {
+    font-size: 14px;
+    line-height: 24px;
+    color: #9ca7b8;
+    opacity: 0.6;
+  }
+
+  &__group span {
+    margin: 0 20px;
+  }
+
+  &__group a {
+    @include dMin {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.contacts-footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -11px -20px 0;
+
+  &__col {
+    width: calc(41% - 40px);
+    margin: 0 20px;
+
+    @include dMax {
+      width: 100%;
+    }
+
+    &:last-child {
+      width: calc(59% - 40px);
+
+      @include dMax {
+        width: 100%;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin-bottom: 10px;
+
+    span,
+    a {
+      font-size: 16px;
+      line-height: 27px;
+      font-weight: 600;
+    }
+
+    svg {
+      max-width: 20px;
+      width: 100%;
+      height: 20px;
+      margin-right: 15px;
+      opacity: 0.5;
+      padding-top: 4px;
+      flex-shrink: 0;
+    }
+  }
+}

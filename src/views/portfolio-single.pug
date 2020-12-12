@@ -1,0 +1,115 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-portfolio.jpg' alt='')
+		.container.top-block__container
+			+title('Portfolio single')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Portfolio'}, {href: '#', text: 'Portfolio single'}], 'top-block__breadcrumbs')
+	.portfolio-single
+		img.circle-1(src='./assets/images/circle/portfolio-single-1.png' alt='')
+		img.circle-2(src='./assets/images/circle/portfolio-single-2.png' alt='')
+		img.circle-3(src='./assets/images/circle/portfolio-single-3.png' alt='')
+		.blue-circle.blue-circle--1
+		.blue-circle.blue-circle--2
+		.blue-circle.blue-circle--3
+		.container.portfolio-single__container
+			.portfolio-single__info
+				.portfolio-single__info-item
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#lens')
+					.portfolio-single__info-item-group
+						p author
+						p Alex Johnson
+				.portfolio-single__info-item
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#contacts--calendar')
+					.portfolio-single__info-item-group
+						p date
+						p Oct 20, 2020
+				.portfolio-single__info-item
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#marker')
+					.portfolio-single__info-item-group
+						p location
+						p Miami Gardens
+				.portfolio-single__info-item
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#model-2')
+					.portfolio-single__info-item-group
+						p client
+						p Milana Walker
+			.portfolio-single__gallery-1
+				img(src='https://via.placeholder.com/1140x600' alt='')
+			.portfolio-single__content
+				.portfolio-single__title Photo Story
+				.portfolio-single__text
+					p The fact that photography has different meanings to different people is one of the many components of its appeal. Photography is such an important part of our life that it is now very difficult to imagine the world without it.
+					p We cannot imagine a wedding without the opportunity to capture it on film, we would not be able to remember the growing up of children or the holidays if we did not have pictures.
+			.portfolio-single__gallery-2
+				img(src='https://via.placeholder.com/560x600' alt='')
+				img(src='https://via.placeholder.com/560x600' alt='')
+			.portfolio-single__content
+				.portfolio-single__title Day One
+				.portfolio-single__text
+					p Everywhere we are haunted by photography in newspapers, magazines, advertisements on television on the Internet, but we still crave even more.
+					p And what helps to achieve a good result? We will look at these issues and some of the possibilities of photography and explain that it is a combination of thought imagination, visual design, technical skills and organizational skills
+			.portfolio-single__gallery-1
+				img(src='https://via.placeholder.com/1140x600' alt='')
+			.portfolio-single__content
+				.portfolio-single__title Final Day
+				.portfolio-single__text
+					p On the other hand, you have a huge choice of approaches to creating photography, from documenting events to independent expressive works that are quite open to interpretation.
+					p Photography is a powerful way of persuading and advocating. She has that grain of truth that allows the photographer to make a statement that he insists on. Take a look at the family album. What kind of photos do you see in it? Are they filming the whole family life or just joyful moments?
+			.portfolio-single__nav
+				a.portfolio-single__nav-btn.portfolio-single__nav-btn--prev(href='#')
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+					span Previous work
+				a.portfolio-single__nav-btn.portfolio-single__nav-btn--next(href='#')
+					span next work
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+			.related-case
+				+tag('portfolio', 'related-case__tag')
+				.related-case__title Related cases
+				.related-case__wrapper
+					a(href="#").news-item
+						.news-item__pic
+							img(src='https://via.placeholder.com/360x460' alt='')
+						.news-item__content
+							.news-item__title Family session
+							.news-item__text
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+								span Chicago
+					a(href="#").news-item
+						.news-item__pic
+							img(src='https://via.placeholder.com/360x460' alt='')
+						.news-item__content
+							.news-item__title Commercial session
+							.news-item__text
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+								span Chicago
+					a(href="#").news-item
+						.news-item__pic
+							img(src='https://via.placeholder.com/360x460' alt='')
+						.news-item__content
+							.news-item__title Personal session
+							.news-item__text
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#marker-2')
+								span Chicago

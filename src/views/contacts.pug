@@ -1,0 +1,30 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('Contacts')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Contacts'}], 'top-block__breadcrumbs')
+	.contacts
+		img(src='./assets/images/circle-3.png' alt='')
+		.blue-circle
+		.container.contacts__container
+			.contacts__wrapper
+				.contacts__col
+					include blocks/form
+				.contacts__col
+					include blocks/info
+	include blocks/map

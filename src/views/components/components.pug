@@ -1,0 +1,91 @@
+mixin button(text, className, svgName, href)
+	if href
+		a.button(href=href, class=className)
+			if svgName
+				svg
+					use(xlink:href=`./svg/sprite.svg#${svgName}`)
+			span= text
+	else
+		button.button(class=className)&attributes(attributes)
+			if svgName
+				svg
+					use(xlink:href=`./svg/sprite.svg#${svgName}`)
+			span= text
+
+mixin play(className, svg, text, href)
+	a.play(href=href, class=className)&attributes(attributes)
+		.play__btn
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#play')
+			if svg
+				svg.play-custom
+					use(xlink:href=`./assets/images/svg/sprite.svg#${svg}`)
+		if text
+			.play__text
+				span.char1 w
+				span.char2 h
+				span.char3 a
+				span.char4 t
+				span.char5 c
+				span.char6 h
+				span.char7 #{' '}
+				span.char8 v
+				span.char9 i
+				span.char10 d
+				span.char11 e
+				span.char12 o
+				span.char13 #{' '}
+				span.char14 a
+				span.char15 b
+				span.char16 o
+				span.char17 u
+				span.char18 t
+				span.char19 #{' '}
+				span.char20 u
+				span.char21 s
+
+mixin tag(text, className)
+	.tag(class=className)
+		svg
+			use(xlink:href='./assets/images/svg/sprite.svg#angle-border')
+		span= text
+		svg
+			use(xlink:href='./assets/images/svg/sprite.svg#angle-border')
+
+mixin input(type, inputName, placeholder, value)
+	if type === 'text' || type === 'email' || type === 'password' || type === 'search'
+		input(type=type, name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+	if type === 'textarea'
+		textarea(name=inputName, value=value, placeholder=placeholder)&attributes(attributes)
+
+mixin title(text, className)
+	.title(class=className)= text
+
+mixin breadcrumbs(links, className)
+	nav.breadcrumbs(class=className)
+		each elem, i in links
+			if i === links.length - 1
+				li
+					span.breadcrumbs__link.breadcrumbs__link--active= elem.text
+			else
+				li
+					a(href=elem.href)= elem.text
+
+mixin pagination(className)
+	.pagination(class=className)
+		.pagination__links
+			a.pagination__link.active(href='#') 1
+			a.pagination__link(href='#') 2
+			a.pagination__link(href='#') 3
+
+mixin socials(links, className)
+	.socials(class=className)
+		each elem in links
+			a(href=elem.href)= elem.text
+
+mixin quote(text, author, className)
+	blockquote.quote(class=className)
+		svg
+			use(xlink:href='./assets/images/svg/sprite.svg#quote')
+		p= text
+		cite= author

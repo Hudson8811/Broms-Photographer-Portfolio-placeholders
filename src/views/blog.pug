@@ -1,0 +1,118 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('Blog')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Blog'}], 'top-block__breadcrumbs')
+	.blog
+		img(src='./assets/images/circle/blog.png' alt='')
+		.blue-circle.blue-circle--1
+		.blue-circle.blue-circle--2
+		.container.blog__container
+			.blog__outer
+				.blog__main
+					.blog-item.blog-item--light
+						.blog-item__pic
+							img(src='https://via.placeholder.com/750x400' alt='')
+							p Fashion
+						.blog-item__content
+							ul.blog-item__publication
+								li Dec 13, 2020
+								li Marco Lutinochi
+								li 3 comments
+							.blog-item__title Lightroom Processing Lessons
+							.blog-item__text This is a program for working with photographs from the shooting stage to <br> their upload and further publication. In this program there is no way to…
+							a.blog-item__more(href='#')
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+					.blog-item
+						.blog-item__pic
+							img(src='https://via.placeholder.com/750x400' alt='')
+							p Lifestyle
+						.blog-item__content
+							ul.blog-item__publication
+								li Dec 18, 2020
+								li Marco Lutinochi
+								li 2 comments
+							.blog-item__title What can I take with my phone?
+							.blog-item__text Technically, mobile devices now have very good characteristics that allow you <br> to shoot different scenes in a wide variety of conditions. You need to that the…
+							a.blog-item__more(href='#')
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+					.blog-item
+						.blog-item__pic
+							img(src='https://via.placeholder.com/750x400' alt='')
+							p Portraits
+						.blog-item__content
+							ul.blog-item__publication
+								li Dec 23, 2020
+								li Marco Lutinochi
+								li 16 comments
+							.blog-item__title Beautiful portrait quickly & efficiently
+							.blog-item__text In this article I will tell you what basic rules must be followed in order for the shooting to really succeed. And following them, each of you can easily make…
+							a.blog-item__more(href='#')
+								svg
+									use(xlink:href='./assets/images/svg/sprite.svg#arrow-slide-small')
+					+pagination('blog__pagination')
+				.sidebar
+					+input('search', 'search', 'Search...')
+					.blog-author
+						.blog-author__pic
+							img(src='https://via.placeholder.com/120' alt='')
+						.blog-author__name Ariana Bennett
+						.blog-author__text Hi! I`m an authtor of this blog. I would be glad if my posts are useful to you.
+						+socials([{href: '#', text: 'Fb'}, {href: '#', text: 'Tw'}, {
+							href: '#',
+							text: 'In'
+						}], 'blog-author__socials')
+					.sidebar__recent
+						p Recent posts
+						.sidebar__recent-wrapper
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70' alt='')
+								.sidebar__recent-group
+									p Discuss the important point with the model in advance.
+									p Dec 13, 2020
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70' alt='')
+								.sidebar__recent-group
+									p Rain. Tips on how to save the situation.
+									p Dec 20, 2020
+							.sidebar__recent-item
+								img(src='https://via.placeholder.com/70' alt='')
+								.sidebar__recent-group
+									p I'll tell you briefly about what technique I'm using.
+									p Dec 27, 2020
+					.sidebar__banner(style='background-image: url("assets/images/post/banner.jpg")')
+						p.label Photography <br> <span>studio</span>
+						p.percent -20%
+						+button('Order now', 'sidebar__order-btn')
+					.recent-comments
+						.recent-comments__title Recent comments
+						.recent-comments__wrapper
+							.recent-comments__item <a>Bruce Jones</a> on expensive professional camera needed…
+							.recent-comments__item <a>Scott Bush</a> on my favorite lens is Nikkor 50mm and Fujinon 35…
+							.recent-comments__item <a>Stacey Longman</a> on the main thing is to try and choose…
+					.tags
+						.tags__title Tags
+						.tags__wrapper
+							.tags__item Portraits
+							.tags__item Fashion
+							.tags__item Nature
+							.tags__item Music
+							.tags__item Studio
+							.tags__item Portraits

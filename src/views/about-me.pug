@@ -1,0 +1,113 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'About me'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('About me')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'About me'}], 'top-block__breadcrumbs')
+	.event.mission-event.about-mission
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.container.event__container
+			.event__wrapper
+				.event__content
+					+tag('my mission')
+					.services__title Hello! My name is Andrew Johnson
+					.services__text My style is a combination between photojournalism and fine-art photography with a touch of fashion and creative lighting. 
+					.services__text My photos are inspired by light, techniques from black & white processing, vintage photos, creative perspective, and of course, most importantly, the personalities of the people I photograph!
+				
+					+button('my works', 'event__btn')
+				.event__pic
+					img(src='https://via.placeholder.com/580' alt='')
+					img(src='https://via.placeholder.com/580' alt='')
+		.container.about-bars__container
+			.about-bars__item
+				.about-bars__icon
+					.about-bars__persent 85 #[span(class="about-bars__persent-small") %]
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#about-me--about-bar1')
+				.about-bars__text 
+					.about-bars__title Portraits
+					.about-bars__desc This is a repetition in plastic forms, lines and colors of a living face.
+			
+			.about-bars__item
+				.about-bars__icon
+					.about-bars__persent 95 #[span(class="about-bars__persent-small") %]
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#about-me--about-bar2')
+				.about-bars__text 
+					.about-bars__title Lifestyle
+					.about-bars__desc This is an illustration of simple life moments without embellishment.
+			
+			.about-bars__item
+				.about-bars__icon
+					.about-bars__persent 90 #[span(class="about-bars__persent-small") %]
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#about-me--about-bar3')
+				.about-bars__text 
+					.about-bars__title Studio
+					.about-bars__desc In the studio, you can always get the desired high quality result.
+			
+			.about-bars__item
+				.about-bars__icon
+					.about-bars__persent 75 #[span(class="about-bars__persent-small") %]
+					svg
+						use(xlink:href='./assets/images/svg/sprite.svg#about-me--about-bar4')
+				.about-bars__text 
+					.about-bars__title Fashion
+					.about-bars__desc This is a shooting of collections of clothes and fashion accessories.
+
+	include blocks/services
+	.about-me-contacts
+		.blue-circle.filter
+		.about-mission__back-object
+			svg
+				use(xlink:href='./assets/images/svg/sprite.svg#about-me--camera')
+		.container.about-me-contacts__wrapper
+			.about-me-contacts__info
+				.form__title get in touch
+				.form__subtitle I have worls-class, flexible support via live chat, email and phone. I guarantee that you’ll be able to have any issue resolved within 24 hours.
+				.info
+					.info__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#contacts--phone')
+						.info__item-wrapper
+							p phone
+							a(href='tel:+13547896452') +1 (354) 78 96 452
+					.info__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#contacts--marker')
+						.info__item-wrapper
+							p Address
+							p Postal Code V9W 2B1, Campbell River, Canada
+					.info__item
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#contacts--mail')
+						.info__item-wrapper
+							p email
+							a(href='mailto:Info@broms.com') Info@broms.com
+			form.form.form__actions( method='POST')
+				.form__title Drop me a line
+				+input('text', 'name', 'Enter your name')(required)
+				+input('email', 'email', 'Enter your email')(required)
+				+input('textarea', 'comment', 'Enter message')
+				+button('send message', 'form__submit')(type='submit')

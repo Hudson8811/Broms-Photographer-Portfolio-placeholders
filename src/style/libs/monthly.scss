@@ -1,0 +1,542 @@
+/* Overall wrapper */
+.monthly {
+  box-sizing: border-box;
+  color: #545454;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  background: #0b0d0e;
+}
+
+/* Top bar containing title, navigation, and buttons */
+.monthly-header {
+  position: relative;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 40px 50px;
+  background: #0b0d0e;
+  height: 104px;
+  box-sizing: border-box;
+}
+/* Center area of top bar containing title and buttons */
+.monthly-header-title {
+  text-transform: uppercase;
+}
+
+/* Buttons for reverting to "today", and closing event list */
+.monthly-header-title a:link,
+.monthly-header-title a:visited {
+  display: block;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 170%;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+/* Add some roundy-ness */
+.monthly-header-title a:first-of-type {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+.monthly-header-title a:last-of-type {
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.monthly-header-title a:hover {
+  background: #8b8b8b;
+  border: 1px solid #8b8b8b;
+  color: #fff;
+}
+.monthly-header-title a:active {
+  background: #222;
+  border: 1px solid #222;
+  transition: none;
+}
+/* current month/yr block */
+.monthly-header-title-date,
+.monthly-header-title-date:hover {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  cursor: default;
+}
+/* Button to reset to current month */
+.monthly-reset {
+  border-left: 0 !important;
+}
+.monthly-reset::before {
+  content: '\21BB';
+  margin-right: 0.25em;
+}
+/* Button to return to month view */
+.monthly-cal {
+  border-right: 0 !important;
+}
+.monthly-cal::before {
+  content: '\2637';
+  margin-right: 0.25em;
+}
+
+/* wrapper for left/right buttons to make the clickable area bigger */
+.monthly-prev,
+.monthly-next {
+  position: absolute;
+  top: 0;
+  width: 3em;
+  height: 100%;
+  opacity: 0.6;
+  transition: 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.monthly-prev {
+  left: 0;
+
+  &:before {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 14px;
+    margin-top: -7px;
+    background: center / auto url(../images/about-us/leftFlickityArrow.svg) no-repeat;
+  }
+}
+.monthly-next {
+  right: 0;
+
+  &:before {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 14px;
+    margin-top: -7px;
+    background: center / auto url(../images/about-us/rightFlickityArrow.svg) no-repeat;
+  }
+}
+
+/* Day of the week headings */
+.monthly-day-title-wrap {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 14px 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  background: #101215;
+}
+.monthly-day-title-wrap div {
+  width: 14.28% !important;
+  display: table-cell;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 170%;
+  color: #9ca7b8;
+}
+
+/* Calendar days wrapper */
+.monthly-day-wrap {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+.monthly-week {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+/* Calendar Days */
+.monthly-day,
+.monthly-day-blank {
+  width: 14.28% !important;
+  display: table-cell;
+  vertical-align: top;
+  box-sizing: border-box;
+  position: relative;
+  color: inherit;
+  background: #030404;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  padding: 0;
+  text-decoration: none;
+}
+
+.monthly-day {
+  &.is-active {
+    background: #0b0d0e;
+  }
+}
+
+/* Trick to make the days' width equal their height */
+.monthly-day:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  float: left;
+}
+
+/* Hover effect for non event calendar days */
+.monthly-day-wrap > a:hover {
+  background: #a1c2e3;
+}
+
+/* Days that are part of previous or next month */
+.monthly-day-blank {
+  background: #030404;
+}
+
+/* Event calendar day number styles */
+.monthly-day-event > .monthly-day-number {
+  position: absolute;
+  line-height: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: #ffffff;
+  opacity: 0.15;
+}
+
+.monthly-day-event {
+  &.day-has-event {
+    .monthly-day-number {
+      opacity: 1;
+    }
+  }
+}
+
+/* Non-Event calendar day number styles */
+.monthly-day-pick > .monthly-indicator-wrap {
+  margin: 0;
+}
+
+.monthly-day-pick > .monthly-day-number:before,
+.monthly-day-pick > .monthly-day-number:after {
+  content: '';
+  display: block;
+  padding-top: calc(50% - 0.8em);
+  width: 0;
+  height: 0;
+}
+
+/* Days in the past in "picker" mode */
+.monthly-past-day:after {
+  content: '';
+  width: 150%;
+  height: 2px;
+  -webkit-transform-origin: left top;
+  -ms-transform-origin: left top;
+  transform-origin: left top;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.monthly-past-day:hover {
+  background: #fff !important;
+}
+
+/* Current day style */
+.monthly-today .monthly-day-number {
+  position: absolute;
+  line-height: 1em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: Sora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 120%;
+  text-transform: capitalize;
+  color: #ffffff;
+  opacity: 0.15;
+}
+.monthly-day-pick.monthly-today .monthly-day-number {
+  padding: 0.15em;
+  margin: calc(50% - 0.7em) auto auto auto;
+  font-size: 1em;
+}
+
+/* Wrapper around events */
+.monthly-indicator-wrap {
+  position: relative;
+  text-align: center;
+  line-height: 0;
+  max-width: 1.5em;
+  margin: 0 auto;
+  padding-top: 1.2em;
+  display: none;
+}
+
+/* Event indicator dots */
+.monthly-day .monthly-event-indicator {
+  display: inline-block;
+  margin: 0.05em;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  vertical-align: middle;
+  background: #7ba7ce;
+}
+
+.monthly-day .monthly-event-indicator span {
+  color: transparent;
+}
+
+.monthly-day .monthly-event-indicator:hover {
+  cursor: pointer;
+}
+/* Listing of events under calendar */
+.monthly-event-list {
+  background: #0b0d0e;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  height: 355px;
+  display: none;
+  transform-origin: center top;
+}
+
+/* Days in Events List */
+.monthly-list-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 40px 90px;
+  display: none;
+  text-align: left;
+  background: #0b0d0e;
+  flex-wrap: wrap;
+}
+
+.monthly-list-item:after {
+  padding: 0.4em 1em;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.monthly-event-list .monthly-today .monthly-event-list-date {
+  color: #ea6565;
+}
+
+/* Events in Events List */
+.monthly-event-list {
+  z-index: 2;
+
+  .listed-event {
+    position: relative;
+    display: block;
+    color: #fff;
+    padding: 20px 30px;
+    border: none;
+    margin: 0;
+    width: 100%;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: #ffffff;
+      opacity: 0.1;
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+    }
+
+    span {
+      display: block;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 170%;
+      color: #9ca7b8;
+      padding-left: 40px;
+    }
+
+    & > div {
+      position: relative;
+      padding-left: 40px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -15px;
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: center / auto url(../images/booking/clock.svg) no-repeat;
+      }
+    }
+
+    &:nth-last-child(2) {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  .services__btn {
+    width: 220px;
+    margin: 0;
+    margin-left: -310px;
+  }
+}
+
+.monthly-list-item a:link,
+.monthly-list-item a:visited {
+  text-decoration: none;
+}
+
+.item-has-event {
+  display: flex;
+}
+
+.item-has-event:after {
+  display: none !important;
+}
+
+.monthly-event-list-date {
+  width: 4em;
+  position: absolute;
+  left: 0;
+  top: 1.2em;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2em;
+  display: none;
+}
+
+.monthly-list-time-start,
+.monthly-list-time-end {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 170%;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: inline-block;
+}
+.monthly-list-time-end:not(:empty):before {
+  content: '\2013';
+  padding: 0 2px;
+}
+
+/* Events List custom webkit scrollbar */
+.monthly-event-list::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+/* Track */
+.monthly-event-list::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+.monthly-event-list::-webkit-scrollbar-thumb {
+  background: rgba(11, 13, 14, 0.8);
+  border-radius: 0.5em;
+}
+.monthly-event-list::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Language-specific. Default is English. */
+.monthly-reset:after {
+  content: 'Today';
+}
+.monthly-cal:after {
+  content: 'Month';
+}
+.monthly-list-item:after {
+  content: 'No Events';
+}
+
+.monthly-locale-fr .monthly-reset:after {
+  content: "aujourd'hui";
+}
+.monthly-locale-fr .monthly-cal:after {
+  content: 'mois';
+}
+.monthly-locale-fr .monthly-list-item:after {
+  content: 'aucun événement';
+}
+
+/*
+Calendar shows event titles if the device width allows for at least 3em per day (rounded
+up to 25em total). This assumes the calendar font is close to the baseline font size and
+the calendar takes up close to the full media width as the window is made smaller or the
+font is zoomed. If one or both of these is not true, this will need to be overridden by
+a layout-specific width, or you will need to use a library like css-element-queries to 
+establish the rules based on the calendar element width rather than the device width.
+*/
+@media (min-width: 25em) {
+  .monthly-day-event {
+    padding-top: 0.4em;
+  }
+  .monthly-day-event > .monthly-indicator-wrap {
+    width: auto;
+    max-width: none;
+  }
+  .monthly-indicator-wrap {
+    padding: 0;
+  }
+  .monthly-day:before {
+    padding-top: calc(100% - 1.2em);
+  }
+  .monthly-day .monthly-event-indicator {
+    display: block;
+    margin: 0 0 1px 0;
+    width: auto;
+    height: 1.5em;
+    line-height: 1.2em;
+    padding: 0.125em 0 0.1em 0.125em;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #333;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+  .monthly-day .monthly-event-indicator.monthly-event-continued {
+    box-shadow: -1px 0 0 0;
+  }
+  .monthly-day .monthly-event-indicator span {
+    display: block;
+    width: auto;
+    margin: 0;
+    color: #fff;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

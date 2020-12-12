@@ -1,0 +1,136 @@
+.portfolio {
+  position: relative;
+  overflow: hidden;
+
+  > img {
+    position: absolute;
+    pointer-events: none;
+
+    &.circle-1 {
+      right: 0;
+      top: 4.3%;
+    }
+
+    &.circle-2 {
+      bottom: 5.2%;
+      left: 0;
+    }
+  }
+
+  .blue-circle {
+    position: absolute;
+
+    &--1 {
+      top: -15%;
+      right: 0;
+    }
+
+    &--2 {
+      bottom: -15%;
+      left: 0;
+    }
+  }
+
+  &__container {
+    padding: 200px 0;
+
+    @include mMax {
+      padding: 40px 0;
+    }
+  }
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    @include mMax {
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__tab-item {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    @include mMax {
+      font-size: 12px;
+      margin: 0 10px;
+    }
+
+    @include dMin {
+      &:not(.active):hover {
+        opacity: 0.5;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 20px;
+
+      @include mMax {
+        margin: 0 10px;
+      }
+    }
+
+    &.active {
+      color: #8aaee6;
+    }
+  }
+
+  &__content-item {
+    display: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__more {
+    width: 171px;
+    margin: 30px auto 0;
+  }
+
+  .news-item {
+    max-width: 100%;
+    width: calc(33.3333% - 30px);
+    margin: 0 15px 27px;
+
+    @include mMax {
+      width: 100%;
+      margin: 0;
+    }
+
+    &__pic {
+      height: 460px;
+
+      @include mMax {
+        height: 260px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.5;
+        margin-right: 10px;
+      }
+    }
+
+    &__content {
+      margin-top: -14px;
+      padding: 0 20px;
+    }
+  }
+}

@@ -1,0 +1,104 @@
+extends layouts/default
+
+block vars
+	-
+		const page = {
+		title: 'index.html'
+		};
+
+
+
+
+block main
+	.top-block
+		img(src='./assets/images/circle-big.png' alt='')
+		.blue-circle
+		.top-block__bg
+			img(src='assets/images/bg-camera.jpg' alt='')
+		.container.top-block__container
+			+title('Services')
+			+breadcrumbs([{href: '#', text: 'Home'}, {href: '#', text: 'Services'}], 'top-block__breadcrumbs')
+	.services-page
+		img(src='./assets/images/circle/services-1.png' alt='')
+		.blue-circle
+		.container.services-page__container
+			.services.services--block
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Personal session
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Wedding day
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Commercial session
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Love stories
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Tourist photography
+				.services__slide
+					.services__slide-pic
+						img(src='https://via.placeholder.com/360x400' alt='')
+					.services__price
+						p.services__name Baby photography
+	include blocks/reviews
+	.price
+		img(src='./assets/images/circle/services-2.png' alt='')
+		.blue-circle
+		.container.price__container
+			+tag('price', 'price__tag')
+			.price__title Choose your optimal plan
+			.price__wrapper
+				.price-item
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#umbrella')
+					.price-item__value 199 <sup>$</sup>
+					.price-item__tariff basic
+					ul.price-item__list
+						li Any event for 1 hours
+						li 1 photo in a unique frame
+						li Top 10 printed photos
+						li Up to 50 photos on CD
+						li 1 photographer
+					+button('get started', 'price-item__btn')
+				.price-item
+					.price-item__bg
+						img(src='assets/images/bg-price.jpg' alt='')
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#cross')
+					.price-item__value 399 <sup>$</sup>
+					.price-item__tariff ultra
+					ul.price-item__list
+						li Any event for 3 hours
+						li 5 photo in a unique frame
+						li Top 20 printed photos
+						li Up to 100 photos on CD
+						li 2 photographer
+					+button('get started', 'price-item__btn')
+				.price-item
+					.price-item__icon
+						svg
+							use(xlink:href='./assets/images/svg/sprite.svg#drink')
+					.price-item__value 599 <sup>$</sup>
+					.price-item__tariff premium
+					ul.price-item__list
+						li Any event for 8 hours
+						li 10 photo in a unique frame
+						li Top 100 printed photos
+						li Up to 1000 photos on CD
+						li 3-5 photographer
+					+button('get started', 'price-item__btn')

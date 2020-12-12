@@ -1,0 +1,39 @@
+.info {
+	padding-bottom: 19px;
+
+	&__item {
+		display: flex;
+
+		+ .info__item {
+			margin-top: 30px;
+			padding-top: 30px;
+			border-top: 1px solid rgba(255,255,255,0.1);
+		}
+
+		svg {
+			max-width: 40px;
+			max-height: 45px;
+			width: 100%;
+			margin-right: 18px;
+			opacity: 0.3;
+		}
+	}
+
+	&__item-wrapper {
+		> p {
+			font-size: 14px;
+			line-height: 24px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		p + p,
+		a {
+			font-size: 16px;
+			line-height: 27px;
+			font-weight: 400;
+			color: #9CA7B8;
+			text-transform: none;
+		}
+	}
+}
