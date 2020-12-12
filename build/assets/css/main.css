@@ -1226,6 +1226,16 @@ textarea {
   z-index: 90;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear; }
+  .header__logo-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
   @media (max-width: 768px) {
     .header {
       padding: 0 25px; } }
